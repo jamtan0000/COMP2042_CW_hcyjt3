@@ -203,6 +203,7 @@ public class GameScene {
     private void moveHorizontally(int i, int j, int des, int sign) {
         if (isValidDesH(i, j, des, sign)) {
             cells[i][j].adder(cells[i][des + sign]);
+            score += cells[i][des + sign].getNumber();
             cells[i][des].setModify(true);
         } else if (des != j) {
             cells[i][j].changeCell(cells[i][des]);
@@ -221,6 +222,7 @@ public class GameScene {
     private void moveVertically(int i, int j, int des, int sign) {
         if (isValidDesV(i, j, des, sign)) {
             cells[i][j].adder(cells[des + sign][j]);
+            score += cells[des + sign][j].getNumber();
             cells[des][j].setModify(true);
         } else if (des != i) {
             cells[i][j].changeCell(cells[des][j]);
@@ -246,14 +248,6 @@ public class GameScene {
             }
         }
         return true;
-    }
-
-    private void sumCellNumbersToScore() {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                score += cells[i][j].getNumber();
-            }
-        }
     }
 
     public void game(Scene gameScene, Group root, Stage primaryStage, Scene endGameScene, Group endGameRoot) {
@@ -297,8 +291,7 @@ public class GameScene {
                         GameScene.this.moveRight();
                         arrowKeyPress = true;
                     }
-                    if (arrowKeyPress == true) {
-                        GameScene.this.sumCellNumbersToScore();
+                    if (arrowKeyPress) {
                         scoreText.setText(score + "");
                         haveEmptyCell = GameScene.this.haveEmptyCell();
                         if (haveEmptyCell == -1) {
