@@ -283,28 +283,35 @@ public class GameScene {
         gameScene.addEventHandler(KeyEvent.KEY_PRESSED, key ->{
                 Platform.runLater(() -> {
                     int haveEmptyCell;
+                    boolean arrowKeyPress = false;
                     if (key.getCode() == KeyCode.DOWN) {
                         GameScene.this.moveDown();
+                        arrowKeyPress = true;
                     } else if (key.getCode() == KeyCode.UP) {
                         GameScene.this.moveUp();
+                        arrowKeyPress = true;
                     } else if (key.getCode() == KeyCode.LEFT) {
                         GameScene.this.moveLeft();
+                        arrowKeyPress = true;
                     } else if (key.getCode() == KeyCode.RIGHT) {
                         GameScene.this.moveRight();
+                        arrowKeyPress = true;
                     }
-                    GameScene.this.sumCellNumbersToScore();
-                    scoreText.setText(score + "");
-                    haveEmptyCell = GameScene.this.haveEmptyCell();
-                    if (haveEmptyCell == -1) {
-                        if (GameScene.this.canNotMove()) {
-                            primaryStage.setScene(endGameScene);
+                    if (arrowKeyPress == true) {
+                        GameScene.this.sumCellNumbersToScore();
+                        scoreText.setText(score + "");
+                        haveEmptyCell = GameScene.this.haveEmptyCell();
+                        if (haveEmptyCell == -1) {
+                            if (GameScene.this.canNotMove()) {
+                                primaryStage.setScene(endGameScene);
 
-                            EndGame.getInstance().endGameShow(endGameScene, endGameRoot, primaryStage, score);
-                            root.getChildren().clear();
-                            score = 0;
-                        }
-                    } else if(haveEmptyCell == 1)
-                        GameScene.this.randomFillNumber(2);
+                                EndGame.getInstance().endGameShow(endGameScene, endGameRoot, primaryStage, score);
+                                root.getChildren().clear();
+                                score = 0;
+                            }
+                        } else if (haveEmptyCell == 1)
+                            GameScene.this.randomFillNumber(2);
+                    }
                 });
             });
     }
