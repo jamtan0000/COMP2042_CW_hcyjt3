@@ -2,6 +2,8 @@ module com.example.demo {
     requires javafx.controls;
     requires javafx.fxml;
 
-    opens com.example.demo to javafx.fxml;
-    exports com.example.demo;
+    opens jam.game to javafx.fxml;
+    exports jam.game;
+    exports jam.menu;
+    opens jam.menu to javafx.fxml;
 }

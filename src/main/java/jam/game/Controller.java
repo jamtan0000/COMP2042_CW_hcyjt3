@@ -1,4 +1,4 @@
-package com.example.demo;
+package jam.game;
 
 public class Controller {
 }
