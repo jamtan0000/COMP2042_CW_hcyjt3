@@ -274,7 +274,7 @@ public class GameScene {
         randomFillNumber(1);
         randomFillNumber(1);
 
-        gameScene.addEventHandler(KeyEvent.KEY_PRESSED, key ->{
+        gameScene.addEventHandler(KeyEvent.KEY_RELEASED, key ->{
                 Platform.runLater(() -> {
                     int haveEmptyCell;
                     boolean arrowKeyPress = false;
