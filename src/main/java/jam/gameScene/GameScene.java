@@ -1,5 +1,6 @@
-package jam.game;
+package jam.gameScene;
 
+import jam.endGameScene.EndGame;
 import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -93,6 +94,9 @@ public class GameScene {
 
     private int passDestination(int i, int j, char direct) {
         int coordinate = j;
+        switch (direct){
+            case 'l':
+        }
         if (direct == 'l') {
             for (int k = j - 1; k >= 0; k--) {
                 if (cells[i][k].getNumber() != 0) {
@@ -277,21 +281,16 @@ public class GameScene {
         gameScene.addEventHandler(KeyEvent.KEY_RELEASED, key ->{
                 Platform.runLater(() -> {
                     int haveEmptyCell;
-                    boolean arrowKeyPress = false;
                     if (key.getCode() == KeyCode.DOWN) {
                         GameScene.this.moveDown();
-                        arrowKeyPress = true;
                     } else if (key.getCode() == KeyCode.UP) {
                         GameScene.this.moveUp();
-                        arrowKeyPress = true;
                     } else if (key.getCode() == KeyCode.LEFT) {
                         GameScene.this.moveLeft();
-                        arrowKeyPress = true;
                     } else if (key.getCode() == KeyCode.RIGHT) {
                         GameScene.this.moveRight();
-                        arrowKeyPress = true;
                     }
-                    if (arrowKeyPress) {
+                    if (key.getCode().isArrowKey()) {
                         scoreText.setText(score + "");
                         haveEmptyCell = GameScene.this.haveEmptyCell();
                         if (haveEmptyCell == -1) {
