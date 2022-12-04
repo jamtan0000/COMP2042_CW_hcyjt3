@@ -1,4 +1,4 @@
-package jam.accountScene;
+package jam.Scene;
 
 import java.util.ArrayList;
 

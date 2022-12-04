@@ -1,6 +1,4 @@
-package jam.menuScene;
-
-import jam.gameScene.*;
+package jam.Scene;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,8 +14,8 @@ import java.util.Scanner;
 public class Main extends Application {
     static final int WIDTH = 900;
     static final int HEIGHT = 900;
-    private Group gameRoot = new Group();
 
+    private Group gameRoot = new Group();
     public static Scene scene;
     private Scene gameScene = new Scene(gameRoot, WIDTH, HEIGHT, Color.rgb(189, 177, 92));
     private static Scanner input= new Scanner(System.in);
@@ -56,26 +54,20 @@ public class Main extends Application {
         backgroundOfMenuForPlay.setY(180);
         accountRoot.getChildren().add(backgroundOfMenuForPlay);*/
 
-        Group endgameRoot = new Group();
-        Scene endGameScene = new Scene(endgameRoot, WIDTH, HEIGHT, Color.rgb(250, 20, 100, 0.2));
-        Group gameRoot = new Group();
-        setGameRoot(gameRoot);
-        Scene gameScene = new Scene(gameRoot, WIDTH, HEIGHT, Color.rgb(189, 177, 92));
-        setGameScene(gameScene);
-        GameScene game = new GameScene();
-        game.game(gameScene, gameRoot, primaryStage, endGameScene, endgameRoot);
 
         scene = new Scene(loadFXML("menu"));
-        primaryStage.setScene(gameScene);
+        primaryStage.setScene(scene);
         primaryStage.show();
+        System.out.println(Main.class.getResource("/jam/Scene/game.fxml"));
 
     }
+
     public static void setRoot(String fxml) throws IOException {
             scene.setRoot(loadFXML(fxml));
         }
 
     private static Parent loadFXML (String fxml) throws IOException {
-        //System.out.println(getClass().getResource(fxml + ".fxml"));
+        System.out.println(Main.class.getResource(fxml + ".fxml"));
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }

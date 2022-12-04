@@ -1,6 +1,5 @@
-package jam.gameScene;
+package jam.Scene;
 
-import jam.endGameScene.EndGame;
 import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -290,7 +289,6 @@ public class GameScene {
                     } else if (key.getCode() == KeyCode.RIGHT) {
                         GameScene.this.moveRight();
                     }
-                    if (key.getCode().isArrowKey()) {
                         scoreText.setText(score + "");
                         haveEmptyCell = GameScene.this.haveEmptyCell();
                         if (haveEmptyCell == -1) {
@@ -301,9 +299,9 @@ public class GameScene {
                                 root.getChildren().clear();
                                 score = 0;
                             }
-                        } else if (haveEmptyCell == 1)
+                        } else if (haveEmptyCell == 1 && key.getCode().isArrowKey())
                             GameScene.this.randomFillNumber(2);
-                    }
+
                 });
             });
     }

@@ -1,6 +1,6 @@
-package jam.accountScene;
+package jam.Controller;
 
-import jam.menuScene.Main;
+import jam.Scene.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

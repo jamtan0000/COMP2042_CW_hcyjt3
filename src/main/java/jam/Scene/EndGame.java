@@ -1,4 +1,4 @@
-package jam.endGameScene;
+package jam.Scene;
 
 import javafx.event.EventHandler;
 import javafx.scene.Group;

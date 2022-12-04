@@ -1,4 +1,4 @@
-package jam.endGameScene;
+package jam.Controller;
 
 public class endGameController {
 }
