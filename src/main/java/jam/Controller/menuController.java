@@ -1,40 +1,30 @@
 package jam.Controller;
 
-import jam.Scene.*;
 
+import jam.Scene.GameScene;
 import jam.Scene.Main;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class menuController {
-
-    private Group gameRoot = new Group();
-
-    public static Scene scene;
-
-    //private Stage primaryStage;
-
-    private Scene gameScene = new Scene(gameRoot, Color.rgb(189, 177, 92));
-    private static Scanner input= new Scanner(System.in);
-
-    public void setGameScene(Scene gameScene) {
-        this.gameScene = gameScene;
-    }
-
-    public void setGameRoot(Group gameRoot) {
-        this.gameRoot = gameRoot;
-    }
-
     @FXML
     private Button btnExit;
 
@@ -45,34 +35,31 @@ public class menuController {
     private Button btnLeaderboard;
 
     @FXML
-    void btnGameClick(ActionEvent event) throws IOException {
-        Group endgameRoot = new Group();
-        Scene endGameScene = new Scene(endgameRoot, 900, 900, Color.rgb(250, 20, 100, 0.2));
-        Group gameRoot = new Group();
-        setGameRoot(gameRoot);
-        Scene gameScene = new Scene(gameRoot, 900, 900, Color.rgb(189, 177, 92));
-        setGameScene(gameScene);
-        GameScene game = new GameScene();
+    void ClickExit(MouseEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Exit Dialog");
+        alert.setHeaderText("Exit game");
+        alert.setContentText("Are you sure?");
 
-        Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        primaryStage.hide();
-        primaryStage.setScene(gameScene);
-        game.game(gameScene, gameRoot, primaryStage, endGameScene, endgameRoot);
-        primaryStage.show();
-
-        //Main.setRoot("/jam/gameScene/game");
-
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            //root.getChildren().clear();
+            System.exit(0);
+        }
     }
 
     @FXML
-    void btnLeaderBoardClick(ActionEvent event) throws IOException {
-        Main.setRoot("/jam/accountScene/account");
+    void ClickGame(MouseEvent event) throws IOException {
+        Stage stage = (Stage) btnGame.getScene().getWindow();
+        //Scene scene = btnGame.getScene();
+        System.out.println(stage);
+        GameScene gameScene = new GameScene(stage);
     }
 
     @FXML
-    void btnExitClick(ActionEvent event) {
-        Platform.exit();
+    void ClickLeaderboard(MouseEvent event) throws IOException {
+        Main.setRoot("account");
     }
-
 
 }
+

@@ -14,10 +14,15 @@ import java.util.Scanner;
 public class Main extends Application {
     static final int WIDTH = 900;
     static final int HEIGHT = 900;
-
     private Group gameRoot = new Group();
-    public static Scene scene;
+
+    public static Scene getScene() {
+        return scene;
+    }
+
+    private static Scene scene;
     private Scene gameScene = new Scene(gameRoot, WIDTH, HEIGHT, Color.rgb(189, 177, 92));
+
     private static Scanner input= new Scanner(System.in);
 
     public void setGameScene(Scene gameScene) {
@@ -57,8 +62,8 @@ public class Main extends Application {
 
         scene = new Scene(loadFXML("menu"));
         primaryStage.setScene(scene);
+        primaryStage.setTitle("James' 2048");
         primaryStage.show();
-        System.out.println(Main.class.getResource("/jam/Scene/game.fxml"));
 
     }
 
@@ -66,8 +71,8 @@ public class Main extends Application {
             scene.setRoot(loadFXML(fxml));
         }
 
-    private static Parent loadFXML (String fxml) throws IOException {
-        System.out.println(Main.class.getResource(fxml + ".fxml"));
+    public static Parent loadFXML (String fxml) throws IOException {
+        //System.out.println(Main.class.getResource(fxml + ".fxml"));
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }

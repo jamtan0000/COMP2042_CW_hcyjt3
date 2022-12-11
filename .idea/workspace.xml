@@ -5,23 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad3fdb40-2d81-4db2-a9e9-be4c2e8c97c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/gameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/menuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/jam/Scene/account.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/jam/Scene/game.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/GameLogic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/jam/Scene/endGameScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/accountScene/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/accountScene/accountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/accountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/endGameScene/EndGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/EndGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/endGameScene/endGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/endGameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/gameScene/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/gameScene/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/GameScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/gameScene/TextMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/TextMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/menuScene/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/menuScene/menuController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jam/accountScene/account.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jam/menuScene/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jam/Scene/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/accountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/accountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/endGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/endGameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/gameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/gameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/menuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/menuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/EndGame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/GameScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/TextMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/TextMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jam/Scene/game.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jam/Scene/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jam/Scene/menu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +77,7 @@
       <recent name="jam.game" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.jam.menuScene.Main">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="jam.Scene.Main" />
       <module name="COMP2042Coursework" />
@@ -110,7 +106,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.jam.menuScene.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>

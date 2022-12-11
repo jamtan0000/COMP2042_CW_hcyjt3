@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jam.Controller.endGameController">
+   <children>
+      <Button fx:id="btnQuit" layoutX="424.0" layoutY="447.0" mnemonicParsing="false" onMouseClicked="#clickQuit" text="Quit" />
+      <Text layoutX="420.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Over" />
+      <Button fx:id="btnMenu" layoutX="420.0" layoutY="500.0" mnemonicParsing="false" onMouseClicked="#clickMenu" text="Menu" />
+      <Label fx:id="score" layoutX="430.0" layoutY="408.0" text="0" />
+   </children>
+</AnchorPane>

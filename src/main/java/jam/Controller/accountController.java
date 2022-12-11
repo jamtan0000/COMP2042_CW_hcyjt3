@@ -18,7 +18,7 @@ public class accountController {
 
     @FXML
     void onMenuBtnClick(ActionEvent event) throws IOException {
-        Main.setRoot("/jam/menuScene/menu");
+        Main.setRoot("/jam/Scene/menu");
     }
 
 }

@@ -8,9 +8,9 @@
 <VBox alignment="CENTER" prefHeight="900.0" prefWidth="900.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jam.Controller.menuController">
    <children>
       <Label text="This is menu" />
-      <Button fx:id="btnGame" mnemonicParsing="false" onAction="#btnGameClick" text="Game" />
-      <Button fx:id="btnLeaderboard" mnemonicParsing="false" onAction="#btnLeaderBoardClick" text="Leaderboard" />
-      <Button fx:id="btnExit" mnemonicParsing="false" onAction="#btnExitClick" text="Exit" />
+      <Button fx:id="btnGame" mnemonicParsing="false" onMouseClicked="#ClickGame" text="Game" />
+      <Button fx:id="btnLeaderboard" mnemonicParsing="false" onMouseClicked="#ClickLeaderboard" text="Leaderboard" />
+      <Button fx:id="btnExit" mnemonicParsing="false" onMouseClicked="#ClickExit" text="Exit" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
