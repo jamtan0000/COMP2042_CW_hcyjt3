@@ -25,6 +25,8 @@ import java.util.Optional;
 import java.util.Scanner;
 
 public class menuController {
+    private Scene scene;
+    private Stage stage;
     @FXML
     private Button btnExit;
 
@@ -51,14 +53,19 @@ public class menuController {
     @FXML
     void ClickGame(MouseEvent event) throws IOException {
         Stage stage = (Stage) btnGame.getScene().getWindow();
-        //Scene scene = btnGame.getScene();
-        System.out.println(stage);
-        GameScene gameScene = new GameScene(stage);
+        Scene scene = btnGame.getScene();
+        GameScene gameScene = new GameScene(stage, scene);
     }
 
     @FXML
     void ClickLeaderboard(MouseEvent event) throws IOException {
         Main.setRoot("account");
+
+    }
+    public void initialize(){
+        /*this.scene = Main.getScene();
+        this.stage = (Stage) scene.getWindow();*/
+
     }
 
 }

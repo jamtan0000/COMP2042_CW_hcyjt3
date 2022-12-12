@@ -1,25 +1,24 @@
 package jam.Scene;
 
-import jam.Controller.endGameController;
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.text.Font;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 
-public class GameLogic {
+public class GameLogic{
     private static int HEIGHT = 700;
     private static int n = 2;
     private final static int distanceBetweenCells = 10;
@@ -27,7 +26,10 @@ public class GameLogic {
     private TextMaker textMaker = TextMaker.getSingleInstance();
     private Cell[][] cells = new Cell[n][n];
     private Group root;
+    private Scene scene;
+    private Stage stage;
     private long score = 0;
+    private Label scoreText;
 
     static void setN(int number) {
         n = number;
@@ -261,20 +263,29 @@ public class GameLogic {
         return true;
     }
 
-    public void game(Scene gameScene, Group root, Stage primaryStage, Text scoreText) {
+
+    public void game(Scene gameScene, Group root, Stage primaryStage, Label scoreText) throws IOException {
         this.root = root;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 cells[i][j] = new Cell((j) * LENGTH + (j + 1) * distanceBetweenCells,
                         (i) * LENGTH + (i + 1) * distanceBetweenCells, LENGTH, root);
             }
-
         }
 
         randomFillNumber(1);
         randomFillNumber(1);
 
-        gameScene.addEventHandler(KeyEvent.KEY_RELEASED, key ->{
+        gameScene.setOnKeyPressed(event -> {
+            // Check if the event is for an arrow key
+            if (event.getCode() == KeyCode.UP || event.getCode() == KeyCode.DOWN ||
+                    event.getCode() == KeyCode.LEFT || event.getCode() == KeyCode.RIGHT) {
+                // Consume the event to prevent it from being propagated
+                event.consume();
+            }
+        });
+        root.requestFocus();
+        root.addEventHandler(KeyEvent.KEY_RELEASED, key ->{
             Platform.runLater(() -> {
                 int haveEmptyCell;
                 if (key.getCode() == KeyCode.DOWN) {
@@ -286,27 +297,29 @@ public class GameLogic {
                 } else if (key.getCode() == KeyCode.RIGHT) {
                     GameLogic.this.moveRight();
                 }
-                    scoreText.setText(score + "");
-                    haveEmptyCell = GameLogic.this.haveEmptyCell();
-                    if (haveEmptyCell == -1) {
-                        if (GameLogic.this.canNotMove()) {
-                            try {
-                                FXMLLoader loader = new FXMLLoader(getClass().getResource("endGameScene.fxml"));
-                                loader.load();
-                                Parent endGameRoot = loader.getRoot();
-                                Label score = (Label) endGameRoot.lookup("#score");
-                                score.setText(String.valueOf(this.score));
-                                Scene scene = Main.getScene();
-                                scene.setRoot(endGameRoot);
-                                primaryStage.setScene(scene);
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
-                            }
+                scoreText.setText(score + "");
+                haveEmptyCell = GameLogic.this.haveEmptyCell();
+                if (haveEmptyCell == -1) {
+                    if (GameLogic.this.canNotMove()) {
+                        root.getChildren().clear();
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("endGameScene.fxml"));
+                        try {
+                            loader.load();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
                         }
-                    } else if (haveEmptyCell == 1 && key.getCode().isArrowKey())
-                        GameLogic.this.randomFillNumber(2);
+                        Parent endGameRoot = loader.getRoot();
+                        Label ensGameScore = (Label) endGameRoot.lookup("#score");
+                        ensGameScore.setText(String.valueOf(this.score));
+                        Scene scene = Main.getScene();
+                        scene.setRoot(endGameRoot);
+                        primaryStage.setScene(scene);
+                    }
+                } else if (haveEmptyCell == 1 && key.getCode().isArrowKey())
+                    GameLogic.this.randomFillNumber(2);
 
-                });
             });
+        });
     }
+
 }

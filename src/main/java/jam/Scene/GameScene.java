@@ -1,11 +1,16 @@
 package jam.Scene;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -31,21 +36,30 @@ public class GameScene {
         this.gameRoot = gameRoot;
     }
 
-    public void startGame(){
+    public void buildScene(){
 
     }
 
-    public GameScene(Stage stage) throws IOException {
+    public GameScene(Stage stage, Scene scene) throws IOException {
         //showGameWindow();
-        gameRoot = new Group();
-        //setGameRoot(gameRoot);
-        //scene.setRoot(gameRoot);
-        gameScene = new Scene(gameRoot, 900, 900, Color.rgb(189, 177, 92));
-        //setGameScene(scene);
-        stage.setScene(gameScene);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("gameScene.fxml"));
+        loader.load();
+        BorderPane gameSceneRoot = loader.getRoot();
+        Label score = (Label) gameSceneRoot.lookup("#score");
+        Node centerNode = gameSceneRoot.getCenter();
+        if (centerNode instanceof Group) {
+            gameRoot = (Group) centerNode;
+        }
+        scene.setRoot(gameSceneRoot);
+        stage.setScene(scene);
         game = new GameLogic();
+        game.game(scene, gameRoot, stage, score);
 
-        Button replay = new Button("Start new game");
+        //setGameRoot(gameRoot);
+        //gameScene = new Scene(gameRoot, 900, 900, Color.rgb(189, 177, 92));
+        //setGameScene(scene);
+        //gameScene = new Scene(gameSceneRoot);
+        /*Button replay = new Button("Start new game");
         gameRoot.getChildren().add(replay);
         replay.relocate(750, 350);
 
@@ -63,8 +77,22 @@ public class GameScene {
         gameRoot.getChildren().add(scoreText);
         scoreText.relocate(750, 150);
         scoreText.setFont(Font.font(20));
-        scoreText.setText("0");
+        scoreText.setText("0");*/
 
-        game.game(gameScene, gameRoot, stage, scoreText);
+
+
+
+        /*replay.setOnAction(actionEvent -> {
+            gameRoot.getChildren().clear();
+            game.game(gameScene, gameRoot, stage);
+        });
+
+        btnMenu.setOnAction(actionEvent -> {
+            try {
+                Main.setRoot("menu");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });*/
     }
 }

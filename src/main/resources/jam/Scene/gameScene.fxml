@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jam.Controller.gameController">
+   <right>
+      <VBox alignment="CENTER" prefHeight="700.0" prefWidth="186.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Score:" />
+            <Label fx:id="score" text="0" />
+            <Button fx:id="btnReplay" mnemonicParsing="false" onMouseClicked="#ClickReplay" text="Replay" />
+            <Button fx:id="btnMenu" mnemonicParsing="false" onMouseClicked="#clickMenu" text="Menu" />
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <TextArea fx:id="txtRule" onMouseClicked="#clickRule" prefHeight="200.0" prefWidth="200.0" text="HOW TO PLAY: &#10;Use your arrow keys to move the tiles. &#10;Tiles with the same number merge into one when they touch. &#10;Add them up to reach 2048!" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <Group fx:id="gameRoot" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
