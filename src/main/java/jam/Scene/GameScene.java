@@ -54,45 +54,7 @@ public class GameScene {
         stage.setScene(scene);
         game = new GameLogic();
         game.game(scene, gameRoot, stage, score);
-
-        //setGameRoot(gameRoot);
         //gameScene = new Scene(gameRoot, 900, 900, Color.rgb(189, 177, 92));
-        //setGameScene(scene);
-        //gameScene = new Scene(gameSceneRoot);
-        /*Button replay = new Button("Start new game");
-        gameRoot.getChildren().add(replay);
-        replay.relocate(750, 350);
 
-        Button btnMenu = new Button("Back to menu");;
-        gameRoot.getChildren().add(btnMenu);
-        btnMenu.relocate(750, 250);
-
-        Text text = new Text();
-        gameRoot.getChildren().add(text);
-        text.setText("SCORE :");
-        text.setFont(Font.font(30));
-        text.relocate(750, 100);
-
-        Text scoreText = new Text();
-        gameRoot.getChildren().add(scoreText);
-        scoreText.relocate(750, 150);
-        scoreText.setFont(Font.font(20));
-        scoreText.setText("0");*/
-
-
-
-
-        /*replay.setOnAction(actionEvent -> {
-            gameRoot.getChildren().clear();
-            game.game(gameScene, gameRoot, stage);
-        });
-
-        btnMenu.setOnAction(actionEvent -> {
-            try {
-                Main.setRoot("menu");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        });*/
     }
 }

@@ -309,7 +309,7 @@ public class GameLogic{
                             throw new RuntimeException(e);
                         }
                         Parent endGameRoot = loader.getRoot();
-                        Label ensGameScore = (Label) endGameRoot.lookup("#score");
+                        Label ensGameScore = (Label) endGameRoot.lookup("#scoreLabel");
                         ensGameScore.setText(String.valueOf(this.score));
                         Scene scene = Main.getScene();
                         scene.setRoot(endGameRoot);

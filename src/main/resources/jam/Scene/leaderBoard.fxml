@@ -7,17 +7,16 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="900.0" prefWidth="900.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jam.Controller.accountController">
+<VBox alignment="CENTER" prefHeight="900.0" prefWidth="900.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jam.Controller.leaderBoardController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
     <Label fx:id="welcomeText" text="Leader Board" />
-   <TableView prefHeight="200.0" prefWidth="500.0">
+   <TableView fx:id="Table" prefHeight="671.0" prefWidth="860.0">
      <columns>
-       <TableColumn prefWidth="579.0" text="User Name" />
-       <TableColumn prefWidth="110.0" text="Mark" />
-         <TableColumn prefWidth="170.0" text="Total Mark" />
+       <TableColumn fx:id="userName" prefWidth="579.0" text="User Name" />
+       <TableColumn fx:id="score" prefWidth="280.0" text="Score" />
      </columns>
    </TableView>
     <Button fx:id="btnMenu" onAction="#onMenuBtnClick" text="Menu" />

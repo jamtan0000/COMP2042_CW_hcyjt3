@@ -37,7 +37,7 @@ public class menuController {
     private Button btnLeaderboard;
 
     @FXML
-    void ClickExit(MouseEvent event) {
+    void ClickExit(MouseEvent event) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Exit Dialog");
         alert.setHeaderText("Exit game");
@@ -46,7 +46,7 @@ public class menuController {
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
             //root.getChildren().clear();
-            System.exit(0);
+            Main.closeEvent();
         }
     }
 
@@ -59,7 +59,7 @@ public class menuController {
 
     @FXML
     void ClickLeaderboard(MouseEvent event) throws IOException {
-        Main.setRoot("account");
+        Main.setRoot("leaderBoard");
 
     }
     public void initialize(){

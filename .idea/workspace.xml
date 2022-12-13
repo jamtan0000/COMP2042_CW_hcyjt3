@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad3fdb40-2d81-4db2-a9e9-be4c2e8c97c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/jam/Scene/gameScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/gameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/gameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/accountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/leaderBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/endGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/endGameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/menuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/menuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/GameLogic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/GameScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jam/Scene/account.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jam/Scene/leaderBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jam/Scene/endGameScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jam/Scene/endGameScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -43,8 +46,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "create.test.in.the.same.root": "true",
-    "last_opened_file_path": "C:/Users/ASUS/IntelliJ/AdvancedFXThreading",
-    "project.structure.last.edited": "Modules",
+    "last_opened_file_path": "C:/Users/ASUS/IntelliJ/COMP2042Coursework/src/main/resources/jam/Scene",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.JavaFX"
@@ -52,14 +55,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\IntelliJ\COMP2042Coursework\src\main\resources\jam\Scene" />
       <recent name="C:\Users\ASUS\IntelliJ\COMP2042Coursework\src\main\resources\jam\gameScene" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\IntelliJ\COMP2042Coursework\src\main\java\jam\Scene" />
       <recent name="C:\Users\ASUS\IntelliJ\COMP2042Coursework\src\main\resources\jam\Scene" />
       <recent name="C:\Users\ASUS\IntelliJ\COMP2042Coursework\src\main\resources\jam\gameScene" />
       <recent name="C:\Users\ASUS\IntelliJ\COMP2042Coursework\src\main\resources\jam\menuScene" />
       <recent name="C:\Users\ASUS\IntelliJ\COMP2042Coursework\src\main\resources\jam\accountScene" />
-      <recent name="C:\Users\ASUS\IntelliJ\COMP2042Coursework\src\main\resources\jam\gameScene\Scene" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="jam.menuScene" />

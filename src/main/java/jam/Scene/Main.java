@@ -3,39 +3,75 @@ package jam.Scene;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
+import javafx.stage.Popup;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Main extends Application {
     static final int WIDTH = 900;
     static final int HEIGHT = 900;
     private Group gameRoot = new Group();
-
+    private static Scene scene;
+    public static FileWriter writer;
     public static Scene getScene() {
         return scene;
     }
-
-    private static Scene scene;
     private Scene gameScene = new Scene(gameRoot, WIDTH, HEIGHT, Color.rgb(189, 177, 92));
 
     private static Scanner input= new Scanner(System.in);
-
     public void setGameScene(Scene gameScene) {
         this.gameScene = gameScene;
     }
-
     public void setGameRoot(Group gameRoot) {
         this.gameRoot = gameRoot;
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        String pathName = "src/main/resources/jam/txt/leaderBoardData.txt";
+        File file = new File(pathName);
+        System.out.println(file.createNewFile());
+        //FileReader reader = new FileReader(pathName);
 
+        System.out.println(writer);
+
+        // Open the file
+        try (BufferedReader reader = new BufferedReader(new FileReader(pathName))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                // Split the line into parts
+                String[] parts = line.split(",");
+
+                // Parse the values from the parts
+                String userName = parts[0];
+                Long score = Long.parseLong(parts[1]);
+                System.out.println(userName+score);
+
+                Account.makeNewAccount(userName,score);
+            }
+        } catch (IOException e) {
+            // Handle the exception
+        }
+
+        /*Collection<Account> list = Files.readAllLines(new File("leaderboard").toPath()).stream().map(line -> {
+            String[] details = line.split(",");
+            Account cd = new Account();
+            cd.Account(details[0]);
+            cd.Account(details[1])
+            return cd;
+        }).collect(Collectors.toList());*/
         /*Group menuRoot = new Group();
         Scene menuScene = new Scene(menuRoot, WIDTH, HEIGHT);
         Group accountRoot = new Group();
@@ -65,6 +101,23 @@ public class Main extends Application {
         primaryStage.setTitle("James' 2048");
         primaryStage.show();
 
+        /*Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.showAndWait();*/
+
+        /*Label label = new Label("This is a Popup");
+        Popup popup = new Popup();
+        label.setStyle(" -fx-background-color: white;");
+        popup.getContent().add(label);
+        popup.show(primaryStage);*/
+
+        primaryStage.setOnCloseRequest(windowEvent -> {
+            try {
+                Main.closeEvent();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
     }
 
     public static void setRoot(String fxml) throws IOException {
@@ -79,5 +132,16 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public static void closeEvent() throws IOException {
+        System.out.println("Y u closing me?（:へく）");
+        String pathName = "src/main/resources/jam/txt/leaderBoardData.txt";
+        writer = new FileWriter(pathName);
+        for(Account ac:Account.accounts){
+            writer.write(ac.getUserName()+","+ac.getScore()+"\n");
+        }
+        writer.close();
+        System.exit(0);
     }
 }
