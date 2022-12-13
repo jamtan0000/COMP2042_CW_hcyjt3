@@ -9,6 +9,8 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -19,6 +21,8 @@ public class gameController{
 
     private Stage stage;
     private Scene scene;
+    @FXML
+    private BorderPane gameSceneBorderPane;
     @FXML
     private Button btnMenu;
 
@@ -76,6 +80,9 @@ public class gameController{
         this.scene = Main.getScene();
         this.stage = (Stage) scene.getWindow();
         txtRule.setEditable(false);
+        gameSceneBorderPane.setBackground(new Background(new BackgroundFill(Main.color, null,null)));
+        txtRule.setBackground(new Background(new BackgroundFill(Main.color, null,null)));
+
     }
 
 

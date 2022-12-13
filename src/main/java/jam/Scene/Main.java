@@ -1,5 +1,6 @@
 package jam.Scene;
 
+import jam.Controller.menuController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
@@ -7,7 +8,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
@@ -20,6 +25,9 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Main extends Application {
+
+
+    public static Color color = Color.WHITE;
     static final int WIDTH = 900;
     static final int HEIGHT = 900;
     private Group gameRoot = new Group();
@@ -42,10 +50,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         String pathName = "src/main/resources/jam/txt/leaderBoardData.txt";
         File file = new File(pathName);
-        System.out.println(file.createNewFile());
+        file.createNewFile();
         //FileReader reader = new FileReader(pathName);
 
-        System.out.println(writer);
 
         // Open the file
         try (BufferedReader reader = new BufferedReader(new FileReader(pathName))) {
@@ -57,7 +64,6 @@ public class Main extends Application {
                 // Parse the values from the parts
                 String userName = parts[0];
                 Long score = Long.parseLong(parts[1]);
-                System.out.println(userName+score);
 
                 Account.makeNewAccount(userName,score);
             }
@@ -94,7 +100,6 @@ public class Main extends Application {
         backgroundOfMenuForPlay.setX(WIDTH / 2 - 120);
         backgroundOfMenuForPlay.setY(180);
         accountRoot.getChildren().add(backgroundOfMenuForPlay);*/
-
 
         scene = new Scene(loadFXML("menu"));
         primaryStage.setScene(scene);
@@ -144,4 +149,9 @@ public class Main extends Application {
         writer.close();
         System.exit(0);
     }
+
+    /*public static void changeColor(Parent root){
+        menuVbox.setBackground(new Background(new BackgroundFill(Main.color, null,null)));
+
+    }*/
 }

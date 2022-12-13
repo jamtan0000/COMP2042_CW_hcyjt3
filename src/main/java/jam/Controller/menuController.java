@@ -13,10 +13,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -27,6 +28,10 @@ import java.util.Scanner;
 public class menuController {
     private Scene scene;
     private Stage stage;
+
+    @FXML
+    public ColorPicker colorPicker;
+
     @FXML
     private Button btnExit;
 
@@ -35,6 +40,9 @@ public class menuController {
 
     @FXML
     private Button btnLeaderboard;
+
+    @FXML
+    private VBox menuVbox;
 
     @FXML
     void ClickExit(MouseEvent event) throws IOException {
@@ -62,7 +70,21 @@ public class menuController {
         Main.setRoot("leaderBoard");
 
     }
+    /*public void changeColor(ActionEvent event) {
+        Color myColor = myColorPicker.getValue();
+        myPane.setBackground(new Background(new BackgroundFill(myColor, null,null)));
+    }*/
+
+    @FXML
+    void actionColorPicker(ActionEvent event) {
+        Main.color = colorPicker.getValue();
+        menuVbox.setBackground(new Background(new BackgroundFill(Main.color, null,null)));
+    }
+
     public void initialize(){
+        colorPicker.setValue(Main.color);
+        menuVbox.setBackground(new Background(new BackgroundFill(Main.color, null,null)));
+
         /*this.scene = Main.getScene();
         this.stage = (Stage) scene.getWindow();*/
 

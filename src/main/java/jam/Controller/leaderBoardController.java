@@ -12,6 +12,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.VBox;
 
 import java.io.*;
@@ -21,6 +23,9 @@ import java.util.ResourceBundle;
 
 public class leaderBoardController implements Initializable {
 
+
+    @FXML
+    private VBox leaderBoardVbox;
     @FXML
     private Button btnMenu;
 
@@ -47,7 +52,7 @@ public class leaderBoardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        leaderBoardVbox.setBackground(new Background(new BackgroundFill(Main.color, null,null)));
         ObservableList<Account> acOL = FXCollections.observableArrayList(Account.accounts);
         score.setComparator(score.getComparator().reversed());
         userName.setCellValueFactory(new PropertyValueFactory<Account,String>("userName"));

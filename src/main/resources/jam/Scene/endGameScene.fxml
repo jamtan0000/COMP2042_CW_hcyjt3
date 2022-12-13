@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jam.Controller.endGameController">
+<AnchorPane fx:id="endGamePane" prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jam.Controller.endGameController">
    <children>
       <Button fx:id="btnQuit" layoutX="415.0" layoutY="515.0" mnemonicParsing="false" onMouseClicked="#clickQuit" text="Quit" textAlignment="CENTER" />
       <Text layoutX="404.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Over" textAlignment="CENTER" />

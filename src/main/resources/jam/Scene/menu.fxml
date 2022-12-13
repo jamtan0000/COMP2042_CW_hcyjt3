@@ -2,14 +2,16 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="900.0" prefWidth="900.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jam.Controller.menuController">
+<VBox fx:id="menuVbox" alignment="CENTER" prefHeight="900.0" prefWidth="900.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jam.Controller.menuController">
    <children>
       <Label text="This is menu" />
       <Button fx:id="btnGame" mnemonicParsing="false" onMouseClicked="#ClickGame" text="Game" />
       <Button fx:id="btnLeaderboard" mnemonicParsing="false" onMouseClicked="#ClickLeaderboard" text="Leaderboard" />
+      <ColorPicker fx:id="colorPicker" onAction="#actionColorPicker" />
       <Button fx:id="btnExit" mnemonicParsing="false" onMouseClicked="#ClickExit" text="Exit" />
    </children>
    <padding>

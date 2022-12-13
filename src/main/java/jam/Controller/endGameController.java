@@ -6,6 +6,9 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.stage.Popup;
 
 import java.io.IOException;
@@ -21,6 +24,9 @@ public class endGameController {
 
     @FXML
     private Button btnQuit;
+
+    @FXML
+    private AnchorPane endGamePane;
 
     @FXML
     private Label scoreLabel = new Label();
@@ -105,13 +111,11 @@ public class endGameController {
         }else {
             System.out.println("Something goes wrong, no result get from text field.");
         }
-
-
-
     }
 
 
     public void initialize() {
+        endGamePane.setBackground(new Background(new BackgroundFill(Main.color, null,null)));
 
 
     }
