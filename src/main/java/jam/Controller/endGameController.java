@@ -47,7 +47,7 @@ public class endGameController {
         alert.setContentText("Are you sure?");
 
         Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK){
+        if (result.get() == ButtonType.OK) {
             Main.closeEvent();
         }
     }
@@ -59,16 +59,16 @@ public class endGameController {
         Optional<String> result = pop.showAndWait();
         Long score = Long.parseLong(scoreLabel.getText());
 
-        if (result.isPresent()){
+        if (result.isPresent()) {
             String userName = result.get();
             Account existAccount = accountHaveBeenExist(userName);
-            if (userName.contains(",")||userName.isBlank()){
+            if (userName.contains(",") || userName.isBlank()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 System.out.println("Hey u no t ah");
                 alert.setHeaderText("The score is not recorded.");
                 alert.setContentText("User name cannot contain comma ',' or blank, please try again.");
                 alert.showAndWait();
-            }else {
+            } else {
                 if (existAccount != null) {
                     long scoreDif = Long.compare(score, existAccount.getScore());
                     if (scoreDif > 0) {
@@ -108,14 +108,14 @@ public class endGameController {
                     System.out.println(userName + " " + score);
                 }
             }
-        }else {
+        } else {
             System.out.println("Something goes wrong, no result get from text field.");
         }
     }
 
 
     public void initialize() {
-        endGamePane.setBackground(new Background(new BackgroundFill(Main.color, null,null)));
+        endGamePane.setBackground(new Background(new BackgroundFill(Main.color, null, null)));
 
 
     }

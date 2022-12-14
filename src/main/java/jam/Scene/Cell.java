@@ -21,6 +21,13 @@ public class Cell {
         return modify;
     }
 
+    /**
+     * This is constructor of this class (single cell) for the game.
+     * @param x     x-location of the cell
+     * @param y     y-location of the cell
+     * @param scale scale of the cell
+     * @param root  (Group) Root of the game
+     */
     Cell(double x, double y, double scale, Group root) {
         rectangle = new Rectangle();
         rectangle.setX(x);
@@ -28,15 +35,29 @@ public class Cell {
         rectangle.setHeight(scale);
         rectangle.setWidth(scale);
         this.root = root;
+        /**
+         * rectangle.setFill fill the color for empty cell.
+         */
         rectangle.setFill(Color.rgb(224, 226, 226, 0.5));
+        /**
+         * Make a single instance for current cell object.
+         */
         this.textClass = TextMaker.getSingleInstance().madeText("0", x, y, root);
         root.getChildren().add(rectangle);
     }
 
+    /**
+     * Set text for the cell.
+     * @param textClass
+     */
     void setTextClass(Text textClass) {
         this.textClass = textClass;
     }
 
+    /**
+     *  This class call swap their text and change their cell.
+     * @param cell
+     */
     void changeCell(Cell cell) {
         TextMaker.changeTwoText(textClass, cell.getTextClass());
         root.getChildren().remove(cell.getTextClass());
@@ -52,14 +73,26 @@ public class Cell {
         cell.setColorByNumber(cell.getNumber());
     }
 
+    /**
+     * This class add current cell object's number to target cell object's number.
+     * Its also change the target cell color.
+     * @param cell
+     */
     void adder(Cell cell) {
         cell.getTextClass().setText((cell.getNumber() + this.getNumber()) + "");
         textClass.setText("0");
+        /**
+         * This line remove the text of the current cell object's number.
+         */
         root.getChildren().remove(textClass);
         cell.setColorByNumber(cell.getNumber());
         setColorByNumber(getNumber());
     }
 
+    /**
+     * This class fill the color in the cell base on the given number parameter.
+     * @param number
+     */
     void setColorByNumber(int number) {
         switch (number) {
             case 0:
@@ -96,7 +129,7 @@ public class Cell {
                 rectangle.setFill(Color.rgb(250, 0, 44, 0.8));
                 break;
             case 2048:
-                rectangle.setFill(Color.rgb(250,0,0,1));
+                rectangle.setFill(Color.rgb(250, 0, 0, 1));
 
 
         }

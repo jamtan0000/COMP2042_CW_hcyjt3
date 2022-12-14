@@ -5,18 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad3fdb40-2d81-4db2-a9e9-be4c2e8c97c2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/endGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/endGameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/gameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/gameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/leaderBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/leaderBoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/menuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/menuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/GameLogic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/TextMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/TextMaker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/jam/Scene/endGameScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jam/Scene/endGameScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jam/Scene/gameScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jam/Scene/gameScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jam/Scene/leaderBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jam/Scene/leaderBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jam/Scene/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jam/Scene/menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jam/Txt/leaderBoardData.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,10 +49,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "create.test.in.the.same.root": "true",
     "last_opened_file_path": "C:/Users/ASUS/IntelliJ/COMP2042Coursework/src/main/resources/jam/Scene",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.JavaFX"
+    "settings.editor.selected.configurable": "editor.preferences.smartKeys"
   }
 }]]></component>
   <component name="RecentsManager">

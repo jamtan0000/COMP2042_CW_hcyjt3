@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Desktop/Lecture/Year 2 Autumn/Developing Maintainable Software (COMP2042 UNMC) (AUM1 22-23)/Coursework/JavaDoc" />
+    <option name="OPTION_SCOPE" value="public" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>

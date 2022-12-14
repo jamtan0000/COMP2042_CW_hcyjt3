@@ -53,10 +53,14 @@ public class leaderBoardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         leaderBoardVbox.setBackground(new Background(new BackgroundFill(Main.color, null,null)));
+
         ObservableList<Account> acOL = FXCollections.observableArrayList(Account.accounts);
+
         score.setComparator(score.getComparator().reversed());
+
         userName.setCellValueFactory(new PropertyValueFactory<Account,String>("userName"));
         score.setCellValueFactory(new PropertyValueFactory<Account,Long>("score"));
+
         Table.setItems(acOL);
         Table.getSortOrder().add(score);
 

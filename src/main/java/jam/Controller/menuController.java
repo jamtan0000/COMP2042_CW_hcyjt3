@@ -52,7 +52,7 @@ public class menuController {
         alert.setContentText("Are you sure?");
 
         Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK){
+        if (result.get() == ButtonType.OK) {
             //root.getChildren().clear();
             Main.closeEvent();
         }
@@ -77,13 +77,13 @@ public class menuController {
 
     @FXML
     void actionColorPicker(ActionEvent event) {
-        Main.color = colorPicker.getValue();
-        menuVbox.setBackground(new Background(new BackgroundFill(Main.color, null,null)));
+            Main.color = colorPicker.getValue();
+        menuVbox.setBackground(new Background(new BackgroundFill(Main.color, null, null)));
     }
 
-    public void initialize(){
+    public void initialize() {
         colorPicker.setValue(Main.color);
-        menuVbox.setBackground(new Background(new BackgroundFill(Main.color, null,null)));
+        menuVbox.setBackground(new Background(new BackgroundFill(Main.color, null, null)));
 
         /*this.scene = Main.getScene();
         this.stage = (Stage) scene.getWindow();*/

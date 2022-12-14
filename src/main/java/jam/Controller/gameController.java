@@ -41,7 +41,7 @@ public class gameController{
 
     @FXML
     void ClickReplay(MouseEvent event) throws IOException {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        /*Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Replay");
         alert.setHeaderText("Game progress will not save. Are you sure?");
 
@@ -51,7 +51,9 @@ public class gameController{
             GameScene gameScene = new GameScene(stage, scene);
         }else {
             gameRoot.requestFocus();
-        }
+        }*/
+        gameRoot.getChildren().clear();
+        GameScene gameScene = new GameScene(stage, scene);
 
     }
 

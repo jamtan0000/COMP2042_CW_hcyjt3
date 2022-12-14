@@ -3,6 +3,7 @@ package jam.Scene;
 import jam.Controller.menuController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Bounds;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -14,6 +15,8 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 
@@ -46,61 +49,14 @@ public class Main extends Application {
         this.gameRoot = gameRoot;
     }
 
+    /**
+     * This is Main of the program.
+     * @param primaryStage
+     * @throws Exception
+     */
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        String pathName = "src/main/resources/jam/txt/leaderBoardData.txt";
-        File file = new File(pathName);
-        file.createNewFile();
-        //FileReader reader = new FileReader(pathName);
-
-
-        // Open the file
-        try (BufferedReader reader = new BufferedReader(new FileReader(pathName))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                // Split the line into parts
-                String[] parts = line.split(",");
-
-                // Parse the values from the parts
-                String userName = parts[0];
-                Long score = Long.parseLong(parts[1]);
-
-                Account.makeNewAccount(userName,score);
-            }
-        } catch (IOException e) {
-            // Handle the exception
-        }
-
-        /*Collection<Account> list = Files.readAllLines(new File("leaderboard").toPath()).stream().map(line -> {
-            String[] details = line.split(",");
-            Account cd = new Account();
-            cd.Account(details[0]);
-            cd.Account(details[1])
-            return cd;
-        }).collect(Collectors.toList());*/
-        /*Group menuRoot = new Group();
-        Scene menuScene = new Scene(menuRoot, WIDTH, HEIGHT);
-        Group accountRoot = new Group();
-        Scene accountScene = new Scene(accountRoot, WIDTH, HEIGHT, Color.rgb(150, 20, 100, 0.2));
-        Group getAccountRoot = new Group();
-        Scene getAccountScene = new Scene(getAccountRoot, WIDTH, HEIGHT, Color.rgb(200, 20, 100, 0.2));
-        */
-        /*Group rankRoot = new Group();
-        Scene rankScene = new Scene(rankRoot, WIDTH, HEIGHT, Color.rgb(250, 50, 120, 0.3));
-        BackgroundFill background_fill = new BackgroundFill(Color.rgb(120, 100, 100), CornerRadii.EMPTY, Insets.EMPTY);
-        Background background = new Background(background_fill);
-
-
-        Rectangle backgroundOfMenu = new Rectangle(240, 120, Color.rgb(120, 120, 120, 0.2));
-        backgroundOfMenu.setX(WIDTH / 2 - 120);
-        backgroundOfMenu.setY(180);
-        menuRoot.getChildren().add(backgroundOfMenu);
-
-        Rectangle backgroundOfMenuForPlay = new Rectangle(240, 140, Color.rgb(120, 20, 100, 0.2));
-        backgroundOfMenuForPlay.setX(WIDTH / 2 - 120);
-        backgroundOfMenuForPlay.setY(180);
-        accountRoot.getChildren().add(backgroundOfMenuForPlay);*/
-
+    public void start(Stage primaryStage) throws IOException {
+        readFile();
         scene = new Scene(loadFXML("menu"));
         primaryStage.setScene(scene);
         primaryStage.setTitle("James' 2048");
@@ -135,10 +91,42 @@ public class Main extends Application {
         return fxmlLoader.load();
     }
 
+    /**
+     * This method is used to read the text file in the path.
+     * @throws IOException
+     */
+    public void readFile() throws IOException {
+        /**
+         * Here will check and create a txt file in the path below.
+         */
+        String pathName = "src/main/resources/jam/txt/leaderBoardData.txt";
+        File file = new File(pathName);
+        file.createNewFile();
+        //FileReader reader = new FileReader(pathName);
+        /**
+         * The file get from above will open and read at here.
+         */
+        BufferedReader reader = new BufferedReader(new FileReader(pathName));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            // Split the line into parts
+            String[] parts = line.split(",");
+
+            // Parse the values from the parts
+            String userName = parts[0];
+            Long score = Long.parseLong(parts[1]);
+
+            Account.makeNewAccount(userName,score);
+        }
+    }
     public static void main(String[] args) {
         launch(args);
     }
 
+    /**
+     * This method is call when closing the program, such as close by clicking button or x of the window.
+     * @throws IOException
+     */
     public static void closeEvent() throws IOException {
         System.out.println("Y u closing me?（:へく）");
         String pathName = "src/main/resources/jam/txt/leaderBoardData.txt";

@@ -8,7 +8,7 @@
 <AnchorPane fx:id="endGamePane" prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jam.Controller.endGameController">
    <children>
       <Button fx:id="btnQuit" layoutX="415.0" layoutY="515.0" mnemonicParsing="false" onMouseClicked="#clickQuit" text="Quit" textAlignment="CENTER" />
-      <Text layoutX="404.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Over" textAlignment="CENTER" />
+      <Text layoutX="404.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game End" textAlignment="CENTER" />
       <Button fx:id="btnMenu" layoutX="411.0" layoutY="476.0" mnemonicParsing="false" onMouseClicked="#clickMenu" text="Menu" textAlignment="CENTER" />
       <Label fx:id="scoreLabel" layoutX="430.0" layoutY="408.0" text="0" textAlignment="CENTER" />
       <Button fx:id="btnSaveRecord" layoutX="393.0" layoutY="438.0" mnemonicParsing="false" onMouseClicked="#clickSaveRecord" text="Save Record" textAlignment="CENTER" />
