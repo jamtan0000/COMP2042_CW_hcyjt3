@@ -10,14 +10,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ColorPicker;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -29,6 +27,21 @@ public class menuController {
     private Scene scene;
     private Stage stage;
 
+    @FXML
+    private TextField rowText;
+
+    public static void setRowNum(int rowNum) {
+        menuController.rowNum = rowNum;
+    }
+
+    public static void setColNum(int colNum) {
+        menuController.colNum = colNum;
+    }
+
+    public static int rowNum;
+    @FXML
+    private TextField colText;
+    public static int colNum;
     @FXML
     public ColorPicker colorPicker;
 
@@ -53,16 +66,19 @@ public class menuController {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
-            //root.getChildren().clear();
             Main.closeEvent();
         }
     }
 
     @FXML
-    void ClickGame(MouseEvent event) throws IOException {
-        Stage stage = (Stage) btnGame.getScene().getWindow();
-        Scene scene = btnGame.getScene();
-        GameScene gameScene = new GameScene(stage, scene);
+    void ClickPlayGame(MouseEvent event) throws IOException {
+        if(checkIsInt(rowText.getText()) && checkIsInt(colText.getText())){
+            Stage stage = (Stage) btnGame.getScene().getWindow();
+            Scene scene = btnGame.getScene();
+            setRowNum(Integer.parseInt(rowText.getText()));
+            setColNum(Integer.parseInt(colText.getText()));
+            GameScene gameScene = new GameScene(stage, scene);
+        }
     }
 
     @FXML
@@ -70,25 +86,35 @@ public class menuController {
         Main.setRoot("leaderBoard");
 
     }
-    /*public void changeColor(ActionEvent event) {
-        Color myColor = myColorPicker.getValue();
-        myPane.setBackground(new Background(new BackgroundFill(myColor, null,null)));
-    }*/
 
     @FXML
     void actionColorPicker(ActionEvent event) {
-            Main.color = colorPicker.getValue();
+        Main.color = colorPicker.getValue();
         menuVbox.setBackground(new Background(new BackgroundFill(Main.color, null, null)));
     }
 
     public void initialize() {
         colorPicker.setValue(Main.color);
         menuVbox.setBackground(new Background(new BackgroundFill(Main.color, null, null)));
-
-        /*this.scene = Main.getScene();
-        this.stage = (Stage) scene.getWindow();*/
-
     }
 
+    public boolean checkIsInt(String text) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Invalid input");
+        alert.setContentText("Please input a positive integer");
+        try{
+            if(Math.signum(Integer.parseInt(text))!=1){
+                alert.setHeaderText(text + " is not a positive integer");
+                alert.showAndWait();
+                return false;
+            }
+            return true;
+        }
+        catch (NumberFormatException e){
+            alert.setHeaderText(text + " is not a valid integer");
+            alert.showAndWait();
+            return false;
+        }
+    }
 }
 

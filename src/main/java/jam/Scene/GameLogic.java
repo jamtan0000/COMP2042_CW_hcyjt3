@@ -1,9 +1,10 @@
 package jam.Scene;
 
+import jam.Controller.menuController;
 import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -12,7 +13,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -20,25 +21,25 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 
 public class GameLogic{
 
+    public static void setHEIGHT(int high) {
+        HEIGHT = high;
+    }
+
     private static int HEIGHT = 700;
     private static int n = 4;
-    private final static int distanceBetweenCells = 10;
-    /**
-     * LENGTH is length of a side of a cell
-     */
-    private static double LENGTH = (HEIGHT - ((n + 1) * distanceBetweenCells)) / (double) n;
-    private TextMaker textMaker = TextMaker.getSingleInstance();
-    private Cell[][] cells = new Cell[n][n];
-    private Group root;
-    private Scene scene;
-    private Stage stage;
-    private long score = 0;
-    private Label scoreText;
+    boolean winReached = false;
+    private static int colNum = menuController.colNum;
+    private static int rowNum = menuController.rowNum;
+    public void setColNum(int col) {
+        colNum = col;
+    }
+    public void setRowNum(int row) {
+        rowNum = row;
+    }
 
     /**
      *Set n with is grid of the game
@@ -48,6 +49,25 @@ public class GameLogic{
         n = number;
         LENGTH = (HEIGHT - ((n + 1) * distanceBetweenCells)) / (double) n;
     }
+
+    private final static int distanceBetweenCells = 2;
+
+    public static void setLENGTH(int cellsMax) {
+        LENGTH = (double) (HEIGHT - (cellsMax + 1) * distanceBetweenCells)/ cellsMax;
+    }
+
+    /**
+     * LENGTH is length of a side of a cell
+     */
+    private static double LENGTH = (HEIGHT - ((Math.max(menuController.rowNum,menuController.colNum) + 1) * distanceBetweenCells))
+            / (double) Math.max(menuController.rowNum,menuController.colNum);
+    private TextMaker textMaker = TextMaker.getSingleInstance();
+    private Cell[][] cells;
+    private Group root;
+    private Scene scene;
+    private Stage stage;
+    private long score = 0;
+    private Label scoreText;
 
     static double getLENGTH() {
         return LENGTH;
@@ -61,18 +81,18 @@ public class GameLogic{
         /**
          * This bunch of code detect the empty cell at the current grid and assign it to a same size empty grid.
          */
-        Cell[][] emptyCells = new Cell[n][n];
+        Cell[][] emptyCells = new Cell[rowNum][colNum];
         int a = 0;
         int b = 0;
         int aForBound=0,bForBound=0;
         outer:
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+        for (int i = 0; i < rowNum; i++) {
+            for (int j = 0; j < colNum; j++) {
                 if (cells[i][j].getNumber() == 0) {
                     emptyCells[a][b] = cells[i][j];
                     //System.out.println(emptyCells[a][b]+"<>"+cells[i][j]);
                     //System.out.println(b);
-                    if (b < n-1) {
+                    if (b < colNum-1) {
                         //System.out.println(b+"p");
                         bForBound=b;
                         b++;
@@ -80,7 +100,7 @@ public class GameLogic{
                         aForBound=a;
                         a++;
                         b = 0;
-                        if(a==n)
+                        if(a==rowNum)
                             break outer;
                     }
                 }
@@ -129,13 +149,11 @@ public class GameLogic{
      * This method check through the cell for 0 and wining number.
      * @return return 1 if got empty cell, return 0 when wining number is checked.
      */
-    boolean winReached = false;
-    int[] gridAry = new int[n*n];
 
     private int  haveEmptyCell() {
         int r = 0;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+        for (int i = 0; i < rowNum; i++) {
+            for (int j = 0; j < colNum; j++) {
                 if (cells[i][j].getNumber() == 0)
                     r = 1;
                 if(cells[i][j].getNumber() == 2048 && !winReached) {
@@ -181,12 +199,12 @@ public class GameLogic{
          * When it meets a empty cell, it returns the y coordinate of the empty cell.
          */
         if (direct == 'r') {
-            for (int k = j + 1; k <= n - 1; k++) {
+            for (int k = j + 1; k <= colNum - 1; k++) {
                 if (cells[i][k].getNumber() != 0) {
                     coordinate = k - 1;
                     break;
-                } else if (k == n - 1) {
-                    coordinate = n - 1;
+                } else if (k == colNum - 1) {
+                    coordinate = colNum - 1;
                 }
             }
             return coordinate;
@@ -197,13 +215,13 @@ public class GameLogic{
          * When it meets a empty cell, it returns the x coordinate of the empty cell.
          */
         if (direct == 'd') {
-            for (int k = i + 1; k <= n - 1; k++) {
+            for (int k = i + 1; k <= rowNum - 1; k++) {
                 if (cells[k][j].getNumber() != 0) {
                     coordinate = k - 1;
                     break;
 
-                } else if (k == n - 1) {
-                    coordinate = n - 1;
+                } else if (k == rowNum - 1) {
+                    coordinate = rowNum - 1;
                 }
             }
             return coordinate;
@@ -228,32 +246,31 @@ public class GameLogic{
     }
 
     private void moveLeft() {
-        for (int i = 0; i < n; i++) {
-            for (int j = 1; j < n; j++) {
+        for (int i = 0; i < rowNum; i++) {
+            for (int j = 1; j < colNum; j++) {
                 moveHorizontally(i, j, passDestination(i, j, 'l'), -1);
             }
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < colNum; j++) {
                 cells[i][j].setModify(false);
             }
         }
     }
     private void moveRight() {
-        for (int i = 0; i < n; i++) {
-            for (int j = n - 1; j >= 0; j--) {
+        for (int i = 0; i < rowNum; i++) {
+            for (int j = colNum - 1; j >= 0; j--) {
                 moveHorizontally(i, j, passDestination(i, j, 'r'), 1);
             }
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < colNum; j++) {
                 cells[i][j].setModify(false);
             }
         }
     }
     private void moveUp() {
-        System.out.println("MU");
-        for (int j = 0; j < n; j++) {
-            for (int i = 1; i < n; i++) {
+        for (int j = 0; j < colNum; j++) {
+            for (int i = 1; i < rowNum; i++) {
                 moveVertically(i, j, passDestination(i, j, 'u'), -1);
             }
-            for (int i = 0; i < n; i++) {
+            for (int i = 0; i < rowNum; i++) {
                 cells[i][j].setModify(false);
             }
         }
@@ -261,11 +278,11 @@ public class GameLogic{
     }
     private void moveDown() {
         System.out.println("MD");
-        for (int j = 0; j < n; j++) {
-            for (int i = n - 1; i >= 0; i--) {
+        for (int j = 0; j < colNum; j++) {
+            for (int i = rowNum - 1; i >= 0; i--) {
                 moveVertically(i, j, passDestination(i, j, 'd'), 1);
             }
-            for (int i = 0; i < n; i++) {
+            for (int i = 0; i < rowNum; i++) {
                 cells[i][j].setModify(false);
             }
         }
@@ -273,7 +290,7 @@ public class GameLogic{
     }
 
     private boolean isValidDesH(int i, int j, int des, int sign) {
-        if (des + sign < n && des + sign >= 0) {
+        if (des + sign < colNum && des + sign >= 0) {
             if (cells[i][des + sign].getNumber() == cells[i][j].getNumber() && !cells[i][des + sign].getModify()
                     && cells[i][des + sign].getNumber() != 0) {
                 return true;
@@ -294,7 +311,7 @@ public class GameLogic{
     }
 
     private boolean isValidDesV(int i, int j, int des, int sign) {
-        if (des + sign < n && des + sign >= 0)
+        if (des + sign < rowNum && des + sign >= 0)
             if (cells[des + sign][j].getNumber() == cells[i][j].getNumber() && !cells[des + sign][j].getModify()
                     && cells[des + sign][j].getNumber() != 0) {
                 return true;
@@ -321,7 +338,7 @@ public class GameLogic{
      * @return
      */
     private boolean haveSameNumberNearly(int i, int j) {
-        if (i < n - 1 && j < n - 1) {
+        if (i < rowNum - 1 && j < colNum - 1) {
             if (cells[i + 1][j].getNumber() == cells[i][j].getNumber())
                 return true;
             if (cells[i][j + 1].getNumber() == cells[i][j].getNumber())
@@ -335,8 +352,8 @@ public class GameLogic{
      * @return false if have same numbed cell nearby, true if no same numbed cell nearby.
      */
     private boolean canNotMove() {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+        for (int i = 0; i < rowNum; i++) {
+            for (int j = 0; j < colNum; j++) {
                 if (haveSameNumberNearly(i, j)) {
                     return false;
                 }
@@ -365,10 +382,10 @@ public class GameLogic{
     }
 
     private String getGridAry(){
-        int[] gridAry = new int[n*n];
+        int[] gridAry = new int[rowNum*colNum];
         int index = 0;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+        for (int i = 0; i < rowNum; i++) {
+            for (int j = 0; j < colNum; j++) {
                 gridAry[index] = cells[i][j].getNumber();
                 index++;
             }
@@ -391,10 +408,17 @@ public class GameLogic{
         GameLogic.this.randomFillNumber(2);
     }
     public void game(Scene gameScene, Group root, Stage stage, Label scoreText) throws IOException {
+
+        this.setColNum(menuController.colNum);
+        this.setRowNum(menuController.rowNum);
+        //GameLogic.setHEIGHT((int) ((Node) ((BorderPane) gameScene.getRoot()).getCenter()).getBoundsInLocal().getHeight());
+        GameLogic.setLENGTH(Math.max(menuController.colNum, menuController.rowNum));
+        cells = new Cell[rowNum][colNum];
+        System.out.println(rowNum+"<>"+colNum);
         this.stage = stage;
         this.root = root;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+        for (int i = 0; i < rowNum; i++) {
+            for (int j = 0; j < colNum; j++) {
                 cells[i][j] = new Cell((j) * LENGTH + (j + 1) * distanceBetweenCells,
                         (i) * LENGTH + (i + 1) * distanceBetweenCells, LENGTH, root);
             }

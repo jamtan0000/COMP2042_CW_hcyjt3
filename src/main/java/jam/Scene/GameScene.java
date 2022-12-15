@@ -1,5 +1,6 @@
 package jam.Scene;
 
+import jam.Controller.menuController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -24,12 +25,12 @@ public class GameScene {
 
     private Group gameRoot;
 
-    private Scene gameScene;
+    private Scene scene;
 
     private GameLogic game;
 
-    public void setGameScene(Scene gameScene) {
-        this.gameScene = gameScene;
+    public void setScene(Scene gameScene) {
+        this.scene = scene;
     }
 
     public void setGameRoot(Group gameRoot) {
@@ -41,7 +42,8 @@ public class GameScene {
     }
 
     public GameScene(Stage stage, Scene scene) throws IOException {
-        //showGameWindow();
+        this.stage = stage;
+        this.scene = scene;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("gameScene.fxml"));
         loader.load();
         BorderPane gameSceneRoot = loader.getRoot();
@@ -53,8 +55,7 @@ public class GameScene {
         scene.setRoot(gameSceneRoot);
         stage.setScene(scene);
         game = new GameLogic();
+        System.out.println(menuController.colNum+" "+menuController.rowNum);
         game.game(scene, gameRoot, stage, score);
-        //gameScene = new Scene(gameRoot, 900, 900, Color.rgb(189, 177, 92));
-
     }
 }
