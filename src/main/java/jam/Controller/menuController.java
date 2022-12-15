@@ -5,7 +5,10 @@ import jam.Scene.GameScene;
 import jam.Scene.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.VBox;
+
 import java.io.IOException;
 import java.util.Optional;
 

@@ -13,7 +13,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.VBox;
 
-import java.io.*;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -47,7 +47,7 @@ public class leaderBoardController implements Initializable {
     /**
      * This is used to initialize the background and also display the all the account from accounts array list on the table view.
      *
-     * @param url Don't know what this use for but delete will give error.
+     * @param url            Don't know what this use for but delete will give error.
      * @param resourceBundle Don't know what this use for but delete will give error.
      */
     @Override

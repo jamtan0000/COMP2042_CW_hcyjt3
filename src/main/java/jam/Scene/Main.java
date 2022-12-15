@@ -28,6 +28,7 @@ public class Main extends Application {
 
     /**
      * Getter
+     *
      * @return
      */
     public static Scene getScene() {
@@ -36,6 +37,7 @@ public class Main extends Application {
 
     /**
      * Getter of the scene.
+     *
      * @return return game scene.
      */
     public static Stage getStage() {
@@ -132,6 +134,7 @@ public class Main extends Application {
 
     /**
      * This is process for exit game by clicking in game button.
+     *
      * @throws IOException
      */
     public static void exitBut() throws IOException {

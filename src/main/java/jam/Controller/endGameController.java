@@ -3,7 +3,10 @@ package jam.Controller;
 import jam.Account.Account;
 import jam.Scene.Main;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
@@ -27,7 +30,8 @@ public class endGameController {
     private Label scoreLabel = new Label();
 
     /**
-     *  Switch to menu page.
+     * Switch to menu page.
+     *
      * @throws IOException
      */
     @FXML
@@ -37,6 +41,7 @@ public class endGameController {
 
     /**
      * Go to exit process.
+     *
      * @throws IOException
      */
     @FXML
@@ -45,7 +50,6 @@ public class endGameController {
     }
 
     /**
-     *
      * @param event
      * @throws IOException
      */

@@ -6,6 +6,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
+/**
+ * This class represent a single cell in the grid.
+ */
 public class Cell {
     private Rectangle rectangle;
     private Group root;
@@ -38,11 +41,11 @@ public class Cell {
         rectangle.setArcWidth(50);
         this.root = root;
 
-         //rectangle.setFill fill the color for empty cell.
+        //rectangle.setFill fill the color for empty cell.
 
         rectangle.setFill(Color.rgb(224, 226, 226, 0.5));
 
-         //Make a single instance for current cell object.
+        //Make a single instance for current cell object.
 
         this.textClass = TextMaker.getSingleInstance().madeText("0", x, y, root);
         root.getChildren().add(rectangle);

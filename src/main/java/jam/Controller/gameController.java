@@ -4,7 +4,10 @@ import jam.Scene.GameScene;
 import jam.Scene.Main;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
@@ -33,6 +36,7 @@ public class gameController {
 
     /**
      * Reset the game root to restart.
+     *
      * @throws IOException IOError
      */
     @FXML
@@ -53,6 +57,7 @@ public class gameController {
 
     /**
      * Back to mane button, pop up confirmation to end game.
+     *
      * @throws IOException IOError.
      */
     @FXML
@@ -80,7 +85,6 @@ public class gameController {
 
     /**
      * Initialize the text area to not editable, set background color of the scene.
-     *
      */
     public void initialize() {
         txtRule.setEditable(false);
