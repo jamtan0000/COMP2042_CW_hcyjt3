@@ -7,4 +7,8 @@ module com.example.demo {
     opens jam.Controller to javafx.fxml;
     exports jam.Scene;
     opens jam.Scene to javafx.fxml;
+    exports jam.GameLogic;
+    opens jam.GameLogic to javafx.fxml;
+    exports jam.Account;
+    opens jam.Account to javafx.fxml;
 }

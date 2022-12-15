@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="endGamePane" prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jam.Controller.endGameController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="900.0" prefWidth="900.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Game End" textAlignment="CENTER" wrappingWidth="319.1640625">
+               <font>
+                  <Font size="52.0" />
+               </font>
+            </Text>
+            <Label fx:id="scoreLabel" text="0" textAlignment="CENTER">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onMouseClicked="#clickSaveRecord" prefHeight="80.0" prefWidth="220.0" text="Save Record" textAlignment="CENTER">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+            <Label />
+            <Button mnemonicParsing="false" onMouseClicked="#clickMenu" prefHeight="80.0" prefWidth="220.0" text="Menu" textAlignment="CENTER">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+            <Label />
+            <Button mnemonicParsing="false" onMouseClicked="#clickQuit" prefHeight="80.0" prefWidth="220.0" text="Quit" textAlignment="CENTER">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

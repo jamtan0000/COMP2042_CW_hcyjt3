@@ -1,14 +1,11 @@
 package jam.Controller;
 
-import jam.Scene.Account;
+import jam.Account.Account;
 import jam.Scene.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -18,16 +15,15 @@ import javafx.scene.layout.VBox;
 
 import java.io.*;
 import java.net.URL;
-import java.util.Comparator;
 import java.util.ResourceBundle;
 
+/**
+ * Controller of the leaderboard FXML.
+ */
 public class leaderBoardController implements Initializable {
-
 
     @FXML
     private VBox leaderBoardVbox;
-    @FXML
-    private Button btnMenu;
 
     @FXML
     private TableView<Account> Table;
@@ -38,29 +34,29 @@ public class leaderBoardController implements Initializable {
     @FXML
     private TableColumn<Account, String> userName;
 
+    /**
+     * This event is used to switch back to menu scene.
+     *
+     * @throws IOException IOError
+     */
     @FXML
-    private Label welcomeText;
-
-    @FXML
-    void onMenuBtnClick(ActionEvent event) throws IOException {
-        Main.setRoot("/jam/Scene/menu");
+    void onMenuBtnClick() throws IOException {
+        Main.setRoot("menu");
     }
 
-    /*public void initialize() throws IOException {
-    }*/
-
-
+    /**
+     * This is used to initialize the background and also display the all the account from accounts array list on the table view.
+     *
+     * @param url Don't know what this use for but delete will give error.
+     * @param resourceBundle Don't know what this use for but delete will give error.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        leaderBoardVbox.setBackground(new Background(new BackgroundFill(Main.color, null,null)));
-
+        leaderBoardVbox.setBackground(new Background(new BackgroundFill(Main.color, null, null)));
         ObservableList<Account> acOL = FXCollections.observableArrayList(Account.accounts);
-
         score.setComparator(score.getComparator().reversed());
-
-        userName.setCellValueFactory(new PropertyValueFactory<Account,String>("userName"));
-        score.setCellValueFactory(new PropertyValueFactory<Account,Long>("score"));
-
+        userName.setCellValueFactory(new PropertyValueFactory<Account, String>("userName"));
+        score.setCellValueFactory(new PropertyValueFactory<Account, Long>("score"));
         Table.setItems(acOL);
         Table.getSortOrder().add(score);
 

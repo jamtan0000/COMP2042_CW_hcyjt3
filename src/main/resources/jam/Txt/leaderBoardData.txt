@@ -3,3 +3,4 @@ a,100
 z,50
 ii,380
 jam tan,40
+asdfasdfasdfasdfa,32

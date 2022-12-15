@@ -1,79 +1,69 @@
 package jam.Scene;
 
-import jam.Controller.menuController;
+import jam.Account.Account;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Bounds;
-import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ColorPicker;
-import javafx.scene.control.Label;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.StackPane;
+import javafx.scene.control.ButtonType;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Scanner;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
+/**
+ * This is used to start the menu page.
+ */
 public class Main extends Application {
-
-
-    public static Color color = Color.WHITE;
-    static final int WIDTH = 900;
-    static final int HEIGHT = 900;
-    private Group gameRoot = new Group();
+    /**
+     * This color object is used to set the background color, you can change default background color at here.
+     */
+    public static Color color = Color.GRAY;
+    /**
+     * Scene of the game.
+     */
     private static Scene scene;
-    public static FileWriter writer;
+
+    /**
+     * Getter
+     * @return
+     */
     public static Scene getScene() {
         return scene;
     }
-    private Scene gameScene = new Scene(gameRoot, WIDTH, HEIGHT, Color.rgb(189, 177, 92));
 
-    private static Scanner input= new Scanner(System.in);
-    public void setGameScene(Scene gameScene) {
-        this.gameScene = gameScene;
+    /**
+     * Getter of the scene.
+     * @return return game scene.
+     */
+    public static Stage getStage() {
+        return stage;
     }
-    public void setGameRoot(Group gameRoot) {
-        this.gameRoot = gameRoot;
-    }
+
+    private static Stage stage;
+    public static FileWriter writer;
+
 
     /**
      * This is Main of the program.
-     * @param primaryStage
-     * @throws Exception
+     *
+     * @param primaryStage Main stage of the game.
+     * @throws IOException IOError.
      */
     @Override
     public void start(Stage primaryStage) throws IOException {
         readFile();
         scene = new Scene(loadFXML("menu"));
+        stage = primaryStage;
         primaryStage.setScene(scene);
         primaryStage.setTitle("James' 2048");
         primaryStage.show();
 
-        /*Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.showAndWait();*/
-
-        /*Label label = new Label("This is a Popup");
-        Popup popup = new Popup();
-        label.setStyle(" -fx-background-color: white;");
-        popup.getContent().add(label);
-        popup.show(primaryStage);*/
-
         primaryStage.setOnCloseRequest(windowEvent -> {
             try {
-                Main.closeEvent();
+                Main.exitEvent();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -81,31 +71,51 @@ public class Main extends Application {
 
     }
 
-    public static void setRoot(String fxml) throws IOException {
-            scene.setRoot(loadFXML(fxml));
-        }
+    /**
+     * This is main of the program.
+     *
+     * @param args args.
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
 
-    public static Parent loadFXML (String fxml) throws IOException {
-        //System.out.println(Main.class.getResource(fxml + ".fxml"));
+    /**
+     * This method is used to set the scene root by just calling this method.
+     *
+     * @param fxml Path of the fxml file.
+     * @throws IOException IOError
+     */
+    public static void setRoot(String fxml) throws IOException {
+        scene.setRoot(loadFXML(fxml));
+    }
+
+    /**
+     * This function load the given fxml path and return fxml parent.
+     *
+     * @param fxml path of the fxml file.
+     * @return return root of given fxml and set as parent
+     * @throws IOException IOError.
+     */
+    public static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
 
     /**
      * This method is used to read the text file in the path.
-     * @throws IOException
+     *
+     * @throws IOException IOError
      */
     public void readFile() throws IOException {
-        /**
-         * Here will check and create a txt file in the path below.
-         */
+
+        //Here will check and create a txt file in the path below.
+
         String pathName = "src/main/resources/jam/txt/leaderBoardData.txt";
         File file = new File(pathName);
         file.createNewFile();
-        //FileReader reader = new FileReader(pathName);
-        /**
-         * The file get from above will open and read at here.
-         */
+
+        //The file get from above will open and read at here.
         BufferedReader reader = new BufferedReader(new FileReader(pathName));
         String line;
         while ((line = reader.readLine()) != null) {
@@ -116,30 +126,41 @@ public class Main extends Application {
             String userName = parts[0];
             Long score = Long.parseLong(parts[1]);
 
-            Account.makeNewAccount(userName,score);
+            Account.makeNewAccount(userName, score);
         }
     }
-    public static void main(String[] args) {
-        launch(args);
+
+    /**
+     * This is process for exit game by clicking in game button.
+     * @throws IOException
+     */
+    public static void exitBut() throws IOException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Exit Dialog");
+        alert.setHeaderText("Exit game");
+        alert.setContentText("Are you sure?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            Main.exitEvent();
+        }
     }
 
     /**
      * This method is call when closing the program, such as close by clicking button or x of the window.
-     * @throws IOException
+     * This method can consider as saving system for the leaderboard.
+     * It will read the accounts in the account arraylist and write in the txt file.
+     *
+     * @throws IOException IOError.
      */
-    public static void closeEvent() throws IOException {
+    public static void exitEvent() throws IOException {
         System.out.println("Y u closing me?（:へく）");
         String pathName = "src/main/resources/jam/txt/leaderBoardData.txt";
         writer = new FileWriter(pathName);
-        for(Account ac:Account.accounts){
-            writer.write(ac.getUserName()+","+ac.getScore()+"\n");
+        for (Account ac : Account.accounts) {
+            writer.write(ac.getUserName() + "," + ac.getScore() + "\n");
         }
         writer.close();
         System.exit(0);
     }
-
-    /*public static void changeColor(Parent root){
-        menuVbox.setBackground(new Background(new BackgroundFill(Main.color, null,null)));
-
-    }*/
 }

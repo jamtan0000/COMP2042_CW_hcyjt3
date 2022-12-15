@@ -1,91 +1,90 @@
 package jam.Controller;
 
-import jam.Scene.GameLogic;
 import jam.Scene.GameScene;
 import jam.Scene.Main;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Optional;
 
-public class gameController{
-
-    private Stage stage;
-    private Scene scene;
+/**
+ * FXML controller for the game scene.
+ */
+public class gameController {
     @FXML
     private BorderPane gameSceneBorderPane;
     @FXML
-    private Button btnMenu;
-
-    @FXML
-    private Button btnReplay;
-
-    @FXML
     private Group gameRoot;
-
+    /**
+     * This is label of the score, used when updating score.
+     */
     @FXML
     private Label score;
-
+    /**
+     * This is text area of the rule.
+     */
     @FXML
     private TextArea txtRule;
 
-
+    /**
+     * Reset the game root to restart.
+     * @throws IOException IOError
+     */
     @FXML
-    void ClickReplay(MouseEvent event) throws IOException {
+    void ClickRestart() throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Replay");
+        alert.setTitle("Restart");
         alert.setHeaderText("Game progress will not save. Are you sure?");
 
         Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK){
+        if (result.get() == ButtonType.OK) {
             gameRoot.getChildren().clear();
-            GameScene gameScene = new GameScene(stage, scene);
-        }else {
+            GameScene gameScene = new GameScene();
+        } else {
             gameRoot.requestFocus();
         }
-        gameRoot.getChildren().clear();
-        GameScene gameScene = new GameScene(stage, scene);
 
     }
 
+    /**
+     * Back to mane button, pop up confirmation to end game.
+     * @throws IOException IOError.
+     */
     @FXML
-    void clickMenu(MouseEvent event) throws IOException {
+    void clickMenu() throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Back to menu");
         alert.setHeaderText("Game progress will not save. Are you sure?");
 
         Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK){
+        if (result.get() == ButtonType.OK) {
             gameRoot.getChildren().clear();
             Main.setRoot("menu");
-        }else {
+        } else {
             gameRoot.requestFocus();
         }
     }
 
-
+    /**
+     * When text area of rule is click, return focus to game root.
+     */
     @FXML
-    void clickRule(MouseEvent event) {
+    void clickRule() {
         gameRoot.requestFocus();
     }
 
+    /**
+     * Initialize the text area to not editable, set background color of the scene.
+     *
+     */
     public void initialize() {
-        this.scene = Main.getScene();
-        this.stage = (Stage) scene.getWindow();
         txtRule.setEditable(false);
-        gameSceneBorderPane.setBackground(new Background(new BackgroundFill(Main.color, null,null)));
-        txtRule.setBackground(new Background(new BackgroundFill(Main.color, null,null)));
-
+        gameSceneBorderPane.setBackground(new Background(new BackgroundFill(Main.color, null, null)));
     }
 
 

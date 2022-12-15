@@ -1,8 +1,7 @@
-package jam.Scene;
+package jam.GameLogic;
 
 
 import javafx.scene.Group;
-import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -23,6 +22,7 @@ public class Cell {
 
     /**
      * This is constructor of this class (single cell) for the game.
+     *
      * @param x     x-location of the cell
      * @param y     y-location of the cell
      * @param scale scale of the cell
@@ -34,20 +34,23 @@ public class Cell {
         rectangle.setY(y);
         rectangle.setHeight(scale);
         rectangle.setWidth(scale);
+        rectangle.setArcHeight(50);
+        rectangle.setArcWidth(50);
         this.root = root;
-        /**
-         * rectangle.setFill fill the color for empty cell.
-         */
+
+         //rectangle.setFill fill the color for empty cell.
+
         rectangle.setFill(Color.rgb(224, 226, 226, 0.5));
-        /**
-         * Make a single instance for current cell object.
-         */
+
+         //Make a single instance for current cell object.
+
         this.textClass = TextMaker.getSingleInstance().madeText("0", x, y, root);
         root.getChildren().add(rectangle);
     }
 
     /**
      * Set text for the cell.
+     *
      * @param textClass
      */
     void setTextClass(Text textClass) {
@@ -55,7 +58,8 @@ public class Cell {
     }
 
     /**
-     *  This class call swap their text and change their cell.
+     * This method call swap their text and change their cell.
+     *
      * @param cell
      */
     void changeCell(Cell cell) {
@@ -74,24 +78,25 @@ public class Cell {
     }
 
     /**
-     * This class add current cell object's number to target cell object's number.
+     * This method add current cell object's number to target cell object's number.
      * Its also change the target cell color.
+     *
      * @param cell
      */
     void adder(Cell cell) {
         cell.getTextClass().setText((cell.getNumber() + this.getNumber()) + "");
         textClass.setText("0");
-        /**
-         * This line remove the text of the current cell object's number.
-         */
+
+        //This line remove the text of the current cell object's number.
         root.getChildren().remove(textClass);
         cell.setColorByNumber(cell.getNumber());
         setColorByNumber(getNumber());
     }
 
     /**
-     * This class fill the color in the cell base on the given number parameter.
-     * @param number
+     * This method fill the color in the cell base on the given number parameter.
+     *
+     * @param number Number text of the cell.
      */
     void setColorByNumber(int number) {
         switch (number) {
