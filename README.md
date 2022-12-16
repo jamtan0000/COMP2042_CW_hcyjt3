@@ -54,7 +54,8 @@ The javaDoc is in the path "src/jacaDoc".
 
 
 **Player input validation**
-1. Make a validation for player input for row and column.
+1. Make validation for player input for row and column.
+2. Make validation for player given username in end game scene already exist in account array list.
    
    
 **List of features that are implemented and are not working properly.**
@@ -70,7 +71,7 @@ When the condition of all the tile cannot move but only bottom right tile have s
    |2|4|  
    |8|4|
    
-   The player should not reach condition if they press right.
+   The player should not reach lose condition if they press right.
    
    
 **List of features, that are not implemented with an explanation of why they were not implemented.**
@@ -91,11 +92,6 @@ When the condition of all the tile cannot move but only bottom right tile have s
 3. Account (Adjust makeNewAccount)
 4. Cell (Just add in the setArcHeight andsetArcWidth)
    
+**Error might occour**
 
-   
-   
-   
-   
-   
-   
-   
+Player may meet error if they try to change the text in leaderBroad.txt file.
