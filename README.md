@@ -15,7 +15,7 @@ Step to run code:
 3. Replace the src file using download the src file.
 4. Press the run button.
 
-The javaDoc is in the path "src/jacaDoc".
+The javaDoc is in the path "src/javaDoc".
 
 
 **List of  features that are implemented and are working properly.**
@@ -78,8 +78,7 @@ When the condition of all the tile cannot move but only bottom right tile have s
    
 **List of features, that are not implemented with an explanation of why they were not implemented.**
 1. Initialy I want to put sound in my project but don't know why cannot add the javafx.media in the moduleInfo.
-2. Initialy I try to make Junit test but I messed up by opening my project using Eclips, now there full of error at my local represitory. 
-   So I not going to make Junit test and push to here. 
+2. Initialy I try to make Junit test but I feel like my class is to big and no idea to make Junit test, its very different than what I learn in lecture.
 
 **New Java classes that introduced for the assignment**
 1. endGameController
@@ -97,3 +96,13 @@ When the condition of all the tile cannot move but only bottom right tile have s
 **Error might occour**
 
 Player may meet error if they try to change the text in leaderBroad.txt file.
+
+
+| Bug found | Fixed    |Not fixed    |
+| :---:   | :---: | :---: |
+| Win condition validation |  X  |    |
+| Spawn tile every key press | X   |    |
+| Score not calculated correctly | X   |    |
+| Cannot merge two pair of tile | X   |    |
+| Random fill not fully random |    | X   |
+| Laed to lose even bottom right still can move |    | X   |
