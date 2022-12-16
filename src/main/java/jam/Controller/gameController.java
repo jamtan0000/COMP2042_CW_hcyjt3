@@ -17,6 +17,8 @@ import java.util.Optional;
 
 /**
  * FXML controller for the game scene.
+ *
+ * @author James Tang
  */
 public class gameController {
     @FXML
@@ -40,7 +42,7 @@ public class gameController {
      * @throws IOException IOError
      */
     @FXML
-    void ClickRestart() throws IOException {
+    void clickRestart() throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Restart");
         alert.setHeaderText("Game progress will not save. Are you sure?");

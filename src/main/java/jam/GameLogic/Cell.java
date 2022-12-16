@@ -8,6 +8,8 @@ import javafx.scene.text.Text;
 
 /**
  * This class represent a single cell in the grid.
+ *
+ * @author James Tang
  */
 public class Cell {
     private Rectangle rectangle;
@@ -15,11 +17,11 @@ public class Cell {
     private Text textClass;
     private boolean modify = false;
 
-    void setModify(boolean modify) {
+    public void setModify(boolean modify) {
         this.modify = modify;
     }
 
-    boolean getModify() {
+    public boolean getModify() {
         return modify;
     }
 
@@ -31,7 +33,7 @@ public class Cell {
      * @param scale scale of the cell
      * @param root  (Group) Root of the game
      */
-    Cell(double x, double y, double scale, Group root) {
+    public Cell(double x, double y, double scale, Group root) {
         rectangle = new Rectangle();
         rectangle.setX(x);
         rectangle.setY(y);
@@ -47,7 +49,7 @@ public class Cell {
 
         //Make a single instance for current cell object.
 
-        this.textClass = TextMaker.getSingleInstance().madeText("0", x, y, root);
+        this.textClass = TextMaker.getSingleInstance().madeText("0", x, y);
         root.getChildren().add(rectangle);
     }
 
@@ -56,7 +58,7 @@ public class Cell {
      *
      * @param textClass
      */
-    void setTextClass(Text textClass) {
+    public void setTextClass(Text textClass) {
         this.textClass = textClass;
     }
 
@@ -65,7 +67,7 @@ public class Cell {
      *
      * @param cell
      */
-    void changeCell(Cell cell) {
+    public void changeCell(Cell cell) {
         TextMaker.changeTwoText(textClass, cell.getTextClass());
         root.getChildren().remove(cell.getTextClass());
         root.getChildren().remove(textClass);
@@ -86,7 +88,7 @@ public class Cell {
      *
      * @param cell
      */
-    void adder(Cell cell) {
+    public void adder(Cell cell) {
         cell.getTextClass().setText((cell.getNumber() + this.getNumber()) + "");
         textClass.setText("0");
 
@@ -101,7 +103,7 @@ public class Cell {
      *
      * @param number Number text of the cell.
      */
-    void setColorByNumber(int number) {
+    public void setColorByNumber(int number) {
         switch (number) {
             case 0:
                 rectangle.setFill(Color.rgb(224, 226, 226, 0.5));
@@ -144,15 +146,15 @@ public class Cell {
 
     }
 
-    double getX() {
+    public double getX() {
         return rectangle.getX();
     }
 
-    double getY() {
+    public double getY() {
         return rectangle.getY();
     }
 
-    int getNumber() {
+    public int getNumber() {
         return Integer.parseInt(textClass.getText());
     }
 

@@ -19,6 +19,8 @@ import java.util.ResourceBundle;
 
 /**
  * Controller of the leaderboard FXML.
+ *
+ * @author James Tang
  */
 public class leaderBoardController implements Initializable {
 

@@ -5,14 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad3fdb40-2d81-4db2-a9e9-be4c2e8c97c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/test/jam/GameLogic/GameLogicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Account/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Account/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/endGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/endGameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/gameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/gameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/leaderBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/leaderBoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/menuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/menuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jam/GameLogic/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/GameLogic/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/GameLogic/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/GameLogic/GameLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/GameLogic/TextMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/GameLogic/TextMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/GameScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jam/Scene/gameScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jam/Scene/gameScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jam/Txt/leaderBoardData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jam/Txt/leaderBoardData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/jam/GameLogic/GameLogicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/jam/GameLogic/GameLogicTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,20 +48,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "last_opened_file_path": "C:/Users/ASUS/IntelliJ/demoFX",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.20344828",
-    "settings.editor.selected.configurable": "editor.preferences.smartKeys"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ASUS/IntelliJ/demoFX&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.20344828&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ASUS\IntelliJ\COMP2042Coursework\src\main\resources\jam\Scene" />

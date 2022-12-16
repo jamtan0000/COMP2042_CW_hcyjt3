@@ -13,6 +13,8 @@ import java.io.IOException;
 
 /**
  * Use to make game scene.
+ *
+ * @author James Tang
  */
 public class GameScene {
 

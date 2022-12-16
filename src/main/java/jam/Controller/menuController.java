@@ -14,6 +14,8 @@ import java.util.Optional;
 
 /**
  * This is controller for the menu fxml.
+ *
+ * @author James Tang
  */
 public class menuController {
     /**
@@ -35,6 +37,11 @@ public class menuController {
      * Input of number of column.
      */
     public static int colNum;
+    @FXML
+    public ColorPicker colorPicker;
+
+    @FXML
+    private VBox menuVbox;
 
     public static void setRowNum(int row) {
         rowNum = row;
@@ -44,11 +51,6 @@ public class menuController {
         colNum = col;
     }
 
-    @FXML
-    public ColorPicker colorPicker;
-
-    @FXML
-    private VBox menuVbox;
 
     /**
      * Calling exit procedure.

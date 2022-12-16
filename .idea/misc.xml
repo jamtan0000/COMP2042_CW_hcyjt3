@@ -3,6 +3,10 @@
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Desktop/Lecture/Year 2 Autumn/Developing Maintainable Software (COMP2042 UNMC) (AUM1 22-23)/Coursework/JavaDoc" />
     <option name="OPTION_SCOPE" value="public" />
+    <option name="OPTION_DOCUMENT_TAG_USE" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_VERSION" value="true" />
+    <option name="OPTION_INCLUDE_LIBS" value="true" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

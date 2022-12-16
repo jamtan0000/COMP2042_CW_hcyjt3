@@ -25,6 +25,8 @@ public class Main extends Application {
      * Scene of the game.
      */
     private static Scene scene;
+    private static Stage stage;
+    public static FileWriter writer;
 
     /**
      * Getter
@@ -44,8 +46,6 @@ public class Main extends Application {
         return stage;
     }
 
-    private static Stage stage;
-    public static FileWriter writer;
 
 
     /**

@@ -6,9 +6,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 /**
- * This calss is use to make number text in the cell.
+ * This class is used to make number text in the cell.
  */
-class TextMaker {
+public class TextMaker {
     private static TextMaker singleInstance = null;
 
     private TextMaker() {
@@ -20,7 +20,7 @@ class TextMaker {
      *
      * @return single Instance of the textMaker.
      */
-    static TextMaker getSingleInstance() {
+    public static TextMaker getSingleInstance() {
         if (singleInstance == null)
             singleInstance = new TextMaker();
         return singleInstance;
@@ -32,10 +32,9 @@ class TextMaker {
      * @param input String input
      * @param xCell x location of the cell
      * @param yCell y location of the cell
-     * @param root  Group root
      * @return Text at a specific location
      */
-    Text madeText(String input, double xCell, double yCell, Group root) {
+    public Text madeText(String input, double xCell, double yCell) {
         double length = GameLogic.getLENGTH();
         double fontSize = (3 * length) / 7.0;
         Text text = new Text(input);
@@ -51,7 +50,7 @@ class TextMaker {
      * @param first
      * @param second
      */
-    static void changeTwoText(Text first, Text second) {
+    public static void changeTwoText(Text first, Text second) {
         String temp;
         temp = first.getText();
         first.setText(second.getText());

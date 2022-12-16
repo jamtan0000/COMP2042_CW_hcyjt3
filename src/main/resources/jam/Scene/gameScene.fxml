@@ -21,7 +21,7 @@
                <font>
                   <Font size="50.0" />
                </font></Label>
-            <Button mnemonicParsing="false" onMouseClicked="#ClickRestart" prefHeight="46.0" prefWidth="146.0" text="Restart">
+            <Button mnemonicParsing="false" onMouseClicked="#clickRestart" prefHeight="46.0" prefWidth="146.0" text="Restart">
                <font>
                   <Font size="31.0" />
                </font></Button>

@@ -18,28 +18,19 @@ public class Account implements Comparable<Account> {
     private String userName;
 
     /**
-     * This getter of arraylist of exits accounts.
-     *
-     * @return
-     */
-    public ArrayList<Account> getAccounts() {
-        return accounts;
-    }
-
-    /**
      * This is array list of the account which contain all exist account.
      */
     public static ArrayList<Account> accounts = new ArrayList<>();
 
     /**
-     * This method compare current Account object score with the given Account object score.
+     * This is Account constructor.
      *
-     * @param o the object to be compared.
-     * @return >0 if current Account score is bigger, 0 if same score, <0 if smaller.
+     * @param userName given username
+     * @param score    given score
      */
-    @Override
-    public int compareTo(Account o) {
-        return Long.compare(score, o.getScore());
+    public Account(String userName, Long score) {
+        this.userName = userName;
+        this.score = score;
     }
 
     /**
@@ -98,14 +89,14 @@ public class Account implements Comparable<Account> {
     }
 
     /**
-     * This is Account constructor.
+     * This method compare current Account object score with the given Account object score.
      *
-     * @param userName
-     * @param score
+     * @param o the object to be compared.
+     * @return int bigger than 0 if current Account score is bigger, 0 if same score, return less than 0 if smaller.
      */
-    public Account(String userName, Long score) {
-        this.userName = userName;
-        this.score = score;
+    @Override
+    public int compareTo(Account o) {
+        return Long.compare(score, o.getScore());
     }
 
 }

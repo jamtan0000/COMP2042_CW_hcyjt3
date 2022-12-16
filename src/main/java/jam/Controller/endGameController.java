@@ -20,6 +20,8 @@ import static jam.Account.Account.makeNewAccount;
 
 /**
  * This is controller for end game scene FXML.
+ *
+ * @author James Tang
  */
 public class endGameController {
 
