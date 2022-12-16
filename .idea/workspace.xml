@@ -7,20 +7,7 @@
     <list default="true" id="ad3fdb40-2d81-4db2-a9e9-be4c2e8c97c2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Account/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Account/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/endGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/endGameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/gameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/gameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/leaderBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/leaderBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/menuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/menuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/GameLogic/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/GameLogic/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/GameLogic/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/GameLogic/GameLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/GameLogic/TextMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/GameLogic/TextMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/GameScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jam/Scene/gameScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jam/Scene/gameScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/jam/Txt/leaderBoardData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jam/Txt/leaderBoardData.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/jam/GameLogic/GameLogicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/jam/GameLogic/GameLogicTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
