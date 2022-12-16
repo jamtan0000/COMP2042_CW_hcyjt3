@@ -1,7 +1,9 @@
 # COMP2042Coursework
- 2048
-Student Name	:James Tang Tzeun Zhu
-Student ID	:20417757
+ **2048**
+ 
+**Student Name	:James Tang Tzeun Zhu**
+
+**Student ID	:20417757**
 
 To run this code, you need to have below requirment.
 1. Have Intellij downloaded.
