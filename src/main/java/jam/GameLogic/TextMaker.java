@@ -20,7 +20,7 @@ public class TextMaker {
      *
      * @return single Instance of the textMaker.
      */
-    public static TextMaker getSingleInstance() {
+    static TextMaker getSingleInstance() {
         if (singleInstance == null)
             singleInstance = new TextMaker();
         return singleInstance;
@@ -34,7 +34,7 @@ public class TextMaker {
      * @param yCell y location of the cell
      * @return Text at a specific location
      */
-    public Text madeText(String input, double xCell, double yCell) {
+    Text madeText(String input, double xCell, double yCell) {
         double length = GameLogic.getLENGTH();
         double fontSize = (3 * length) / 7.0;
         Text text = new Text(input);
@@ -50,7 +50,7 @@ public class TextMaker {
      * @param first
      * @param second
      */
-    public static void changeTwoText(Text first, Text second) {
+    static void changeTwoText(Text first, Text second) {
         String temp;
         temp = first.getText();
         first.setText(second.getText());

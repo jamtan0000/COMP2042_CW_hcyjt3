@@ -1,4 +1,5 @@
 module:jam
+com.example.test1
 jam.Account
 jam.Controller
 jam.GameLogic

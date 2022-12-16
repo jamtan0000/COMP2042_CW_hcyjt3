@@ -7,7 +7,75 @@
     <list default="true" id="ad3fdb40-2d81-4db2-a9e9-be4c2e8c97c2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/element-list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/index-files/index-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/index-files/index-11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/index-files/index-12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/index-files/index-3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/index-files/index-4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/index-files/index-5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/index-files/index-6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/index-files/index-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/index-files/index-8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/index-files/index-9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Account/Account.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Account/Account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Account/class-use/Account.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Account/class-use/Account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Account/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Account/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Account/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Account/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Account/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Account/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/class-use/endGameController.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/class-use/endGameController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/class-use/gameController.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/class-use/gameController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/class-use/leaderBoardController.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/class-use/leaderBoardController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/class-use/menuController.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/class-use/menuController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/endGameController.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/endGameController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/gameController.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/gameController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/leaderBoardController.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/leaderBoardController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/menuController.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/menuController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Controller/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/Cell.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/Cell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/GameLogic.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/GameLogic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/TextMaker.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/TextMaker.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/class-use/Cell.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/class-use/Cell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/class-use/GameLogic.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/class-use/GameLogic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/class-use/TextMaker.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/class-use/TextMaker.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/GameLogic/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Scene/GameScene.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Scene/GameScene.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Scene/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Scene/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Scene/class-use/GameScene.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Scene/class-use/GameScene.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Scene/class-use/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Scene/class-use/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Scene/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Scene/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Scene/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Scene/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/jam/Scene/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/jam/Scene/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/jam/module-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/jam/module-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/legal/jquery.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/legal/jquery.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/legal/jqueryUI.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/legal/jqueryUI.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/member-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/package-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/package-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/script-dir/jquery-3.6.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/script-dir/jquery-3.6.0.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/script-dir/jquery-ui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/script-dir/jquery-ui.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/script-dir/jquery-ui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/script-dir/jquery-ui.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/tag-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/tag-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaDoc/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaDoc/type-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/endGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/endGameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/gameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/gameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/leaderBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/leaderBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Controller/menuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Controller/menuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/GameLogic/TextMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/GameLogic/TextMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jam/Scene/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jam/Scene/GameScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/jam/Txt/leaderBoardData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jam/Txt/leaderBoardData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/jam/GameLogic/GameLogicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/jam/GameLogic/GameLogicTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +97,14 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2I1yii9j5tNSKRdkLdOSYbSuq1e" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -42,7 +118,7 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ASUS/IntelliJ/demoFX&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ASUS/IntelliJ/COMP2042Coursework&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.20344828&quot;,
